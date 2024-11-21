@@ -12,7 +12,7 @@ CORS(app)
 
 openai.api_key = os.getenv('OPENAI_API')
 
-with open('system_message.txt', 'r', encoding='utf-8') as file:
+with open('prompt', 'r', encoding='utf-8') as file:
     system_message_content = file.read()
 
 SYSTEM_MESSAGE = {
@@ -69,7 +69,7 @@ def chat():
         history.append({"role": "user", "content": user_message})
         history.append({"role": "assistant", "content": assistant_message})
 
-        return jsonify({'response': assistant_message.replace("\n", "")})
+        return jsonify({'response': assistant_message})
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
