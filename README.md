@@ -8,8 +8,6 @@ Content-Type:application/json
 
 # body raw
 <br>
-<br>
 {<br>
   "message": "您好",<br>
-  "history": []<br>
 }
