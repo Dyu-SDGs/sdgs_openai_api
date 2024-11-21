@@ -38,7 +38,7 @@ def chat():
 
         assistant_message = response['choices'][0]['message']['content'].strip()
 
-        return jsonify({'response': assistant_message})
+        return jsonify({'response': assistant_message.replace("\n", "")})
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
